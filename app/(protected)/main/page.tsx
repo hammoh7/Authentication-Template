@@ -1,20 +1,10 @@
-import { auth, signOut } from "@/lib/auth";
+"use client";
+import { LogoutBtn } from "../_components/logout";
 
-const MainPage = async () => {
-  const session = await auth();
+const MainPage = () => {
   return (
-    <div>
-      {JSON.stringify(session)}
-      <form
-        action={async () => {
-          "use server";
-          await signOut();
-        }}
-      >
-        <button type="submit">Sign Out</button>
-      </form>
-    </div>
-  );
+    <LogoutBtn /> 
+  )
 };
 
 export default MainPage;
